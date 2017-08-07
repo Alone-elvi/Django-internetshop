@@ -1,0 +1,265 @@
+{% extends 'base.html'%}
+{% load static %}
+
+{% block content%}
+<div class="section-top">
+    <div>
+        <img src="{% static 'template/images/slider/slider0.jpg'%}" class="img-responsive">
+    </div>
+</div>
+<div class="container main-container">
+    <div class="row featuredPostContainer globalPadding style2">
+        <h3 class="section-title style2 text-center"><span>NEW ARRIVALS</span></h3>
+        <div id="productslider" class="owl-carousel owl-theme">
+
+            {% for product_image in products_images %}
+            <div class="item">
+                <div class="product">
+                    <a class="add-fav tooltipHere" data-toggle="tooltip" data-original-title="Add to Wishlist"
+                       data-placement="left">
+                        <i class="glyphicon glyphicon-heart"></i>
+                    </a>
+                    <div class="image">
+                        <div class="quickview">
+                            <a data-toggle="modal" class="btn btn-xs btn-quickview" href="ajax/product.html"
+                               data-target="#productSetailsModalAjax">Быстрый просмотр</a>
+                        </div>
+                        <a href="product-details.html"><img src="{{ product_image.image.url }}" alt="img"
+                                                            class="img-responsive"></a>
+                        <div class="promotion">
+                            <!--<span class="new-product"> NEW</span> -->
+                            {% if product_image.product.discount %}
+                            <span class="discount">{{ prdoduct.discount}}</span>
+                            {% endif %}
+                        </div>
+                    </div>
+                    <div class="description">
+                        <h4><a href="product-details.html">{{ product_image.product.name }} </a></h4>
+                        <p>{{ product_image.product.short_description|truncatechars_html:80 }} </p>
+                        <!--<span class="size">XL / XXL / S </span>-->
+                    </div>
+                    <div class="price"><span>{{ product_image.product.price }}</span></div>
+                    <div class="action-control"><a class="btn btn-primary"> <span class="add2cart"><i
+                            class="glyphicon glyphicon-shopping-cart"> </i> Добавить в корзину </span> </a></div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+<div class="container main-container">
+    <div class="row featuredPostContainer globalPadding style2">
+        <h3 class="section-title style2 text-center"><span>NEW ARRIVALS</span></h3>
+        <div id="productslider" class="owl-carousel owl-theme">
+            <div class="item">
+                <div class="product">
+                    <a class="add-fav tooltipHere" data-toggle="tooltip" data-original-title="Add to Wishlist"
+                       data-placement="left">
+                        <i class="glyphicon glyphicon-heart"></i>
+                    </a>
+                    <div class="image">
+                        <div class="quickview">
+                            <a data-toggle="modal" class="btn btn-xs btn-quickview" href="ajax/product.html"
+                               data-target="#productSetailsModalAjax">Quick View </a>
+                        </div>
+                        <a href="product-details.html"><img src="{% static 'template/images/product/34.jpg'%}" alt="img"
+                                                            class="img-responsive"></a>
+                        <div class="promotion"><span class="new-product"> NEW</span> <span
+                                class="discount">15% OFF</span></div>
+                    </div>
+                    <div class="description">
+                        <h4><a href="product-details.html">consectetuer adipiscing </a></h4>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. </p>
+                        <span class="size">XL / XXL / S </span></div>
+                    <div class="price"><span>$25</span></div>
+                    <div class="action-control"><a class="btn btn-primary"> <span class="add2cart"><i
+                            class="glyphicon glyphicon-shopping-cart"> </i> Add to cart </span> </a></div>
+                </div>
+            </div>
+            <div class="item">
+                <div class="product">
+                    <a class="add-fav tooltipHere" data-toggle="tooltip" data-original-title="Add to Wishlist"
+                       data-placement="left">
+                        <i class="glyphicon glyphicon-heart"></i>
+                    </a>
+                    <div class="image">
+                        <div class="quickview">
+                            <a data-toggle="modal" class="btn btn-xs btn-quickview" href="ajax/product.html"
+                               data-target="#productSetailsModalAjax">Quick View </a>
+                        </div>
+                        <a href="product-details.html"><img src="{% static 'template/images/product/30.jpg'%}" alt="img"
+                                                            class="img-responsive"></a>
+                        <div class="promotion"><span class="discount">15% OFF</span></div>
+                    </div>
+                    <div class="description">
+                        <h4><a href="product-details.html">luptatum zzril delenit</a></h4>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. </p>
+                        <span class="size">XL / XXL / S </span></div>
+                    <div class="price"><span>$25</span></div>
+                    <div class="action-control"><a class="btn btn-primary"> <span class="add2cart"><i
+                            class="glyphicon glyphicon-shopping-cart"> </i> Add to cart </span> </a></div>
+                </div>
+            </div>
+            <div class="item">
+                <div class="product">
+                    <a class="add-fav tooltipHere" data-toggle="tooltip" data-original-title="Add to Wishlist"
+                       data-placement="left">
+                        <i class="glyphicon glyphicon-heart"></i>
+                    </a>
+                    <div class="image">
+                        <div class="quickview">
+                            <a data-toggle="modal" class="btn btn-xs btn-quickview" href="ajax/product.html"
+                               data-target="#productSetailsModalAjax">Quick View </a>
+                        </div>
+                        <a href="product-details.html"><img src="{% static 'template/images/product/36.jpg'%}" alt="img"
+                                                            class="img-responsive"></a>
+                        <div class="promotion"><span class="new-product"> NEW</span></div>
+                    </div>
+                    <div class="description">
+                        <h4><a href="product-details.html">eleifend option </a></h4>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. </p>
+                        <span class="size">XL / XXL / S </span></div>
+                    <div class="price"><span>$25</span></div>
+                    <div class="action-control"><a class="btn btn-primary"> <span class="add2cart"><i
+                            class="glyphicon glyphicon-shopping-cart"> </i> Add to cart </span> </a></div>
+                </div>
+            </div>
+            <div class="item">
+                <div class="product">
+                    <a class="add-fav tooltipHere" data-toggle="tooltip" data-original-title="Add to Wishlist"
+                       data-placement="left">
+                        <i class="glyphicon glyphicon-heart"></i>
+                    </a>
+                    <div class="image">
+                        <div class="quickview">
+                            <a data-toggle="modal" class="btn btn-xs btn-quickview" href="ajax/product.html"
+                               data-target="#productSetailsModalAjax">Quick View </a>
+                        </div>
+                        <a href="product-details.html"><img src="{% static 'template/images/product/9.jpg'%}" alt="img"
+                                                            class="img-responsive"></a>
+                    </div>
+                    <div class="description">
+                        <h4><a href="product-details.html">mutationem consuetudium </a></h4>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. </p>
+                        <span class="size">XL / XXL / S </span></div>
+                    <div class="price"><span>$25</span></div>
+                    <div class="action-control"><a class="btn btn-primary"> <span class="add2cart"><i
+                            class="glyphicon glyphicon-shopping-cart"> </i> Add to cart </span> </a></div>
+                </div>
+            </div>
+            <div class="item">
+                <div class="product">
+                    <a class="add-fav tooltipHere" data-toggle="tooltip" data-original-title="Add to Wishlist"
+                       data-placement="left">
+                        <i class="glyphicon glyphicon-heart"></i>
+                    </a>
+                    <div class="image">
+                        <div class="quickview">
+                            <a data-toggle="modal" class="btn btn-xs btn-quickview" href="ajax/product.html"
+                               data-target="#productSetailsModalAjax">Quick View </a>
+                        </div>
+                        <a href="product-details.html"><img src="{% static 'template/images/product/12.jpg'%}" alt="img"
+                                                            class="img-responsive"></a></div>
+                    <div class="description">
+                        <h4><a href="product-details.html">sequitur mutationem </a></h4>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. </p>
+                        <span class="size">XL / XXL / S </span></div>
+                    <div class="price"><span>$25</span></div>
+                    <div class="action-control"><a class="btn btn-primary"> <span class="add2cart"><i
+                            class="glyphicon glyphicon-shopping-cart"> </i> Add to cart </span> </a></div>
+                </div>
+            </div>
+            <div class="item">
+                <div class="product">
+                    <a class="add-fav tooltipHere" data-toggle="tooltip" data-original-title="Add to Wishlist"
+                       data-placement="left">
+                        <i class="glyphicon glyphicon-heart"></i>
+                    </a>
+                    <div class="image">
+                        <div class="quickview">
+                            <a data-toggle="modal" class="btn btn-xs btn-quickview" href="ajax/product.html"
+                               data-target="#productSetailsModalAjax">Quick View </a>
+                        </div>
+                        <a href="product-details.html"><img src="{% static 'template/images/product/13.jpg'%}" alt="img"
+                                                            class="img-responsive"></a></div>
+                    <div class="description">
+                        <h4><a href="product-details.html">consuetudium lectorum.</a></h4>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. </p>
+                        <span class="size">XL / XXL / S </span></div>
+                    <div class="price"><span>$25</span></div>
+                    <div class="action-control"><a class="btn btn-primary"> <span class="add2cart"><i
+                            class="glyphicon glyphicon-shopping-cart"> </i> Add to cart </span> </a></div>
+                </div>
+            </div>
+            <div class="item">
+                <div class="product">
+                    <a class="add-fav tooltipHere" data-toggle="tooltip" data-original-title="Add to Wishlist"
+                       data-placement="left">
+                        <i class="glyphicon glyphicon-heart"></i>
+                    </a>
+                    <div class="image">
+                        <div class="quickview">
+                            <a data-toggle="modal" class="btn btn-xs btn-quickview" href="ajax/product.html"
+                               data-target="#productSetailsModalAjax">Quick View </a>
+                        </div>
+                        <a href="product-details.html"><img src="{% static 'template/images/product/21.jpg'%}" alt="img"
+                                                            class="img-responsive"></a></div>
+                    <div class="description">
+                        <h4><a href="product-details.html">parum claram</a></h4>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. </p>
+                        <span class="size">XL / XXL / S </span></div>
+                    <div class="price"><span>$25</span></div>
+                    <div class="action-control"><a class="btn btn-primary"> <span class="add2cart"><i
+                            class="glyphicon glyphicon-shopping-cart"> </i> Add to cart </span> </a></div>
+                </div>
+            </div>
+            <div class="item">
+                <div class="product">
+                    <a class="add-fav tooltipHere" data-toggle="tooltip" data-original-title="Add to Wishlist"
+                       data-placement="left">
+                        <i class="glyphicon glyphicon-heart"></i>
+                    </a>
+                    <div class="image">
+                        <div class="quickview">
+                            <a data-toggle="modal" class="btn btn-xs btn-quickview" href="ajax/product.html"
+                               data-target="#productSetailsModalAjax">Quick View </a>
+                        </div>
+                        <a href="product-details.html"><img src="{% static 'template/images/product/24.jpg'%}" alt="img"
+                                                            class="img-responsive"></a></div>
+                    <div class="description">
+                        <h4><a href="product-details.html">duis dolore </a></h4>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. </p>
+                        <span class="size">XL / XXL / S </span></div>
+                    <div class="price"><span>$25</span></div>
+                    <div class="action-control"><a class="btn btn-primary"> <span class="add2cart"><i
+                            class="glyphicon glyphicon-shopping-cart"> </i> Add to cart </span> </a></div>
+                </div>
+            </div>
+            <div class="item">
+                <div class="product">
+                    <a class="add-fav tooltipHere" data-toggle="tooltip" data-original-title="Add to Wishlist"
+                       data-placement="left">
+                        <i class="glyphicon glyphicon-heart"></i>
+                    </a>
+                    <div class="image">
+                        <div class="quickview">
+                            <a data-toggle="modal" class="btn btn-xs btn-quickview" href="ajax/product.html"
+                               data-target="#productSetailsModalAjax">Quick View </a>
+                        </div>
+                        <a href="product-details.html"><img src="{% static 'template/images/product/15.jpg'%}" alt="img"
+                                                            class="img-responsive"></a></div>
+                    <div class="description">
+                        <h4><a href="product-details.html">feugait nulla facilisi</a></h4>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. </p>
+                        <span class="size">XL / XXL / S </span></div>
+                    <div class="price"><span>$25</span></div>
+                    <div class="action-control"><a class="btn btn-primary"> <span class="add2cart"><i
+                            class="glyphicon glyphicon-shopping-cart"> </i> Add to cart </span> </a></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<h3>Test 1234</h3>
+{% endblock content %}
